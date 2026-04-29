@@ -1,0 +1,19 @@
+document.querySelector("#signupForm").addEventListener("submit", async e => {
+  e.preventDefault();
+  const data = {
+    name: e.target.name.value,
+    email: e.target.email.value,
+    password: e.target.password.value
+  };
+  const res = await fetch("http://localhost:3000/api/signup", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  });
+  const result = await res.json();
+  alert(result.message || result.error);
+  if(result.user) {
+    localStorage.setItem("signedUp", "true");
+    window.location.href = "index.html";
+  }
+});
