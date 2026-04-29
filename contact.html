@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | DevCodes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><h1>Get in Touch</h1></header>
+  <form id="contactForm">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message"></textarea>
+    <button type="submit">Send Message →</button>
+  </form>
+
+  <section>
+    <h2>Founder Info</h2>
+    <p>Nobonith Roy</p>
+    <p>Email: nobonithmithil@gmail.com</p>
+    <p>Help Hours: 4 PM – 10 PM BD Time</p>
+  </section>
+
+<script>
+document.querySelector("#contactForm").addEventListener("submit", async e => {
+  e.preventDefault();
+  alert("Message sent! We’ll reply soon.");
+});
+</script>
+</body>
+</html>
