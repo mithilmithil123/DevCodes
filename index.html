@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DevCodes | Sunno & Optus v1.0.0</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Coming Soon Banner -->
+  <div class="coming-soon">
+    🚀 A new and better DevCodes is coming soon!
+  </div>
+
+  <!-- Cookie Banner -->
+  <div id="cookie-banner" class="banner">
+    <p>DevCodes uses cookies to improve your experience. By continuing, you accept our 
+       <a href="privacy.html">Privacy Policy</a>. <strong>No money required</strong>.
+    </p>
+    <button onclick="acceptCookies()">Accept</button>
+  </div>
+
+  <!-- Signup Banner -->
+  <div id="signup-banner" class="banner">
+    <p>🚀 Sign up to squeeze more out of Sunno DocuMate and Optus FlashForge — <strong>no money required</strong>.</p>
+    <a href="signup.html" class="btn-primary">Sign Up →</a>
+  </div>
+
+  <!-- Hero -->
+  <header>
+    <h1>DevCodes v1.0.0</h1>
+    <p>Introducing Sunno DocuMate & Optus FlashForge</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="signup.html">Signup</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </header>
+
+  <!-- Products -->
+  <section class="products">
+    <div class="card feature locked">
+      <h2>Sunno DocuMate v1.0.0</h2>
+      <img src="assets/images/home.png" alt="DocuMate demo">
+      <p>AI-powered documentation generator. Limited features until signup.</p>
+      <button disabled>Generate Docs</button>
+    </div>
+    <div class="card feature locked">
+      <h2>Optus FlashForge v1.0.0</h2>
+      <img src="assets/images/flashforge.png" alt="FlashForge demo">
+      <p>Universal bootable USB creator. Unlock full power after signup.</p>
+      <button disabled>Create USB</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>DevCodes © 2026 — Sunno & Optus v1.0.0 Series</p>
+  </footer>
+
+<script>
+function acceptCookies() {
+  document.getElementById("cookie-banner").style.display = "none";
+  localStorage.setItem("cookiesAccepted", "true");
+}
+window.onload = () => {
+  if(localStorage.getItem("cookiesAccepted")) {
+    document.getElementById("cookie-banner").style.display = "none";
+  }
+  if(localStorage.getItem("signedUp")) {
+    document.getElementById("signup-banner").style.display = "none";
+    document.querySelectorAll(".locked").forEach(el => {
+      el.classList.remove("locked");
+      el.querySelector("button").disabled = false;
+    });
+  }
+};
+</script>
+</body>
+</html>
